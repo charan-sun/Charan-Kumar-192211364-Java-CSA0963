@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+public class UsernameCheck {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        
+        System.out.println("Enter the first username: ");
+        String s1 = input.nextLine();
+        
+        System.out.println("Enter the second username: ");
+        String s2 = input.nextLine();
+        
+        if(s1.equals(s2)) {
+            System.out.print("User name valid");
+        } else {
+            System.out.print("User name Invalid");
+        }
+        
+        input.close();
+    }
+}
