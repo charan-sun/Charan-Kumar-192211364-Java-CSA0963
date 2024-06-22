@@ -1,0 +1,35 @@
+public class StringMethodsDemo {
+    public static void main(String[] args) {
+        String str1 = new String(); // Empty string
+        String str2 = new String("Hello");
+        char[] charArray = {'W', 'o', 'r', 'l', 'd'};
+        String str3 = new String(charArray);
+        byte[] byteArray = {72, 101, 108, 108, 111};
+        String str4 = new String(byteArray);
+        System.out.println("String Constructors:");
+        System.out.println("str1: \"" + str1 + "\"");
+        System.out.println("str2: \"" + str2 + "\"");
+        System.out.println("str3: \"" + str3 + "\"");
+        System.out.println("str4: \"" + str4 + "\"");
+        String sampleStr = "  Java Programming Language  ";
+        System.out.println("\nString length: " + sampleStr.length());
+        System.out.println("Character at index 5: " + sampleStr.charAt(5));
+        System.out.println("Substring (index 2 to 7): " + sampleStr.substring(2, 7));
+        System.out.println("Equals 'java programming language': " + sampleStr.equals("java programming language"));
+        System.out.println("EqualsIgnoreCase 'java programming language': " + sampleStr.equalsIgnoreCase("java programming language"));
+        System.out.println("CompareTo 'Java': " + sampleStr.compareTo("Java"));
+        System.out.println("IndexOf 'a': " + sampleStr.indexOf('a'));
+        System.out.println("LastIndexOf 'a': " + sampleStr.lastIndexOf('a'));
+        System.out.println("ToLowerCase: " + sampleStr.toLowerCase());
+        System.out.println("ToUpperCase: " + sampleStr.toUpperCase());
+        System.out.println("Trimmed string: \"" + sampleStr.trim() + "\"");
+        System.out.println("Replace 'a' with 'o': " + sampleStr.replace('a', 'o'));
+        String[] words = sampleStr.trim().split(" ");
+        System.out.println("Split string:");
+        for (String word : words) {
+            System.out.println(word);
+        }
+        String str5 = "Hello".concat(" World!");
+        System.out.println("Concatenated string: " + str5);
+    }
+}
