@@ -1,0 +1,33 @@
+public class DataTypeConversionDemo {
+    public static void main(String[] args) {
+        byte byteVar = 42;
+        short shortVar = byteVar;
+        int intVar = shortVar;
+        long longVar = intVar;
+        float floatVar = longVar;
+        double doubleVar = floatVar;
+        System.out.println("Implicit Conversion (Widening):");
+        System.out.println("byte to short: " + shortVar);
+        System.out.println("short to int: " + intVar);
+        System.out.println("int to long: " + longVar);
+        System.out.println("long to float: " + floatVar);
+        System.out.println("float to double: " + doubleVar);
+        double largeDoubleVar = 42.99;
+        float largeFloatVar = (float) largeDoubleVar;
+        long largeLongVar = (long) largeFloatVar;
+        int largeIntVar = (int) largeLongVar;
+        short largeShortVar = (short) largeIntVar;
+        byte largeByteVar = (byte) largeShortVar;
+        System.out.println("\nExplicit Conversion (Narrowing):");
+        System.out.println("double to float: " + largeFloatVar);
+        System.out.println("float to long: " + largeLongVar);
+        System.out.println("long to int: " + largeIntVar);
+        System.out.println("int to short: " + largeShortVar);
+        System.out.println("short to byte: " + largeByteVar);
+        byte overflowByte = (byte) 130; 
+        byte underflowByte = (byte) -130; 
+        System.out.println("\nOverflow and Underflow:");
+        System.out.println("Overflow (byte 130): " + overflowByte);
+        System.out.println("Underflow (byte -130): " + underflowByte);
+    }
+}
