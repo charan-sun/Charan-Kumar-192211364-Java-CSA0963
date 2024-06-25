@@ -1,0 +1,39 @@
+abstract class AbstractClass {
+    abstract void total();
+    abstract void average();
+
+    void mean() {
+        System.out.println("Mean method");
+    }
+
+    void mode() {
+        System.out.println("Mode method");
+    }
+
+    void median() {
+        System.out.println("Median method");
+    }
+}
+
+class ConcreteClass extends AbstractClass {
+    @Override
+    void total() {
+        System.out.println("Total method");
+    }
+
+    @Override
+    void average() {
+        System.out.println("Average method");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        ConcreteClass obj = new ConcreteClass();
+        obj.total();
+        obj.average();
+        obj.mean();
+        obj.mode();
+        obj.median();
+    }
+}
