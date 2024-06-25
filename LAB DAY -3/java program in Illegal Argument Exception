@@ -1,0 +1,71 @@
+enum Color {
+    RED, GREEN, BLUE
+}
+
+public class IllegalArgumentExceptionExamples {
+    public static void main(String[] args) {
+        // Negative Argument in a method requiring non-negative values
+        try {
+            squareRoot(-1);
+        } catch (IllegalArgumentException e) {
+            System.out.println("Exception: " + e.getMessage());
+        }
+
+        // Invalid Enum Constant Passed to a Method
+        try {
+            printColor("YELLOW");
+        } catch (IllegalArgumentException e) {
+            System.out.println("Exception: " + e.getMessage());
+        }
+
+        // Setting an Invalid Range for a Method Parameter
+        try {
+            setAge(150);
+        } catch (IllegalArgumentException e) {
+            System.out.println("Exception: " + e.getMessage());
+        }
+
+        // Empty or Null String Argument in a Method Requiring Non-Empty Strings
+        try {
+            greet("");
+        } catch (IllegalArgumentException e) {
+            System.out.println("Exception: " + e.getMessage());
+        }
+
+        try {
+            greet(null);
+        } catch (IllegalArgumentException e) {
+            System.out.println("Exception: " + e.getMessage());
+        }
+    }
+
+    static double squareRoot(int num) {
+        if (num < 0) {
+            throw new IllegalArgumentException("Number must be non-negative.");
+        }
+        return Math.sqrt(num);
+    }
+
+    static void printColor(String colorName) {
+        try {
+            Color color = Color.valueOf(colorName);
+            System.out.println("Color is " + color);
+        } catch (IllegalArgumentException e) {
+            throw new IllegalArgumentException("Invalid enum constant passed to method.");
+        }
+    }
+
+    static void setAge(int age) {
+        if (age < 0 || age > 120) {
+            throw new IllegalArgumentException("Age must be between 0 and 120.");
+        }
+        System.out.println("Age is set to " + age);
+    }
+
+    static void greet(String name) {
+        if (name == null || name.isEmpty()) {
+            throw new IllegalArgumentException("Name must be a non-empty string.");
+        }
+        System.out.println("Hello, " + name);
+    }
+}
