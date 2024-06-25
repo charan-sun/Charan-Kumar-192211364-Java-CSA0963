@@ -1,0 +1,33 @@
+public class ArithmeticExceptions {
+    public static void main(String[] args) {
+        try {
+            int result = 10 / 0;
+        } catch (ArithmeticException e) {
+            System.out.println("Exception: Division by zero is not allowed.");
+        }
+
+        try {
+            double logResult = Math.log(-1);
+        } catch (ArithmeticException | IllegalArgumentException e) {
+            System.out.println("Exception: Logarithm of a negative number is not allowed.");
+        }
+
+        try {
+            double tanResult = Math.tan(Math.toRadians(90));
+            if (Double.isInfinite(tanResult)) {
+                throw new ArithmeticException("Tan 90 degrees is undefined.");
+            }
+        } catch (ArithmeticException e) {
+            System.out.println("Exception: " + e.getMessage());
+        }
+
+        try {
+            double powResult = Math.pow(0, 0);
+            if (Double.isNaN(powResult)) {
+                throw new ArithmeticException("Zero power zero is undefined.");
+            }
+        } catch (ArithmeticException e) {
+            System.out.println("Exception: " + e.getMessage());
+        }
+    }
+}
