@@ -1,0 +1,33 @@
+class SuperClass {
+    int num;
+
+    public SuperClass(int num) {
+        this.num = num;
+    }
+
+    void display() {
+        System.out.println("Number in SuperClass: " + num);
+    }
+}
+
+class SubClass extends SuperClass {
+    int num;
+
+    public SubClass(int num1, int num2) {
+        super(num1);
+        this.num = num2;
+    }
+
+    @Override
+    void display() {
+        super.display();
+        System.out.println("Number in SubClass: " + num);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        SubClass obj = new SubClass(10, 20);
+        obj.display();
+    }
+}
