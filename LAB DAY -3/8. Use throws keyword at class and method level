@@ -1,0 +1,25 @@
+class CustomException extends Exception {
+    public CustomException(String message) {
+        super(message);
+    }
+}
+
+public class ThrowsKeywordExample {
+
+    public static void main(String[] args) {
+        try {
+            ThrowsKeywordExample example = new ThrowsKeywordExample();
+            example.method1();
+        } catch (CustomException e) {
+            System.out.println("Exception caught: " + e.getMessage());
+        }
+    }
+
+    public void method1() throws CustomException {
+        method2();
+    }
+
+    public void method2() throws CustomException {
+        throw new CustomException("Custom exception thrown from method2.");
+    }
+}
