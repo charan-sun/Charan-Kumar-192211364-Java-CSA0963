@@ -1,0 +1,24 @@
+class InvalidDecimalException extends Exception {
+    public InvalidDecimalException(String message) {
+        super(message);
+    }
+}
+
+public class InvalidDecimalCheck {
+    public static void main(String[] args) {
+        try {
+            checkInvalidDecimal("12.34.56");
+        } catch (InvalidDecimalException e) {
+            System.out.println("Exception: " + e.getMessage());
+        }
+    }
+
+    static void checkInvalidDecimal(String value) throws InvalidDecimalException {
+        try {
+            Double.parseDouble(value);
+        } catch (NumberFormatException e) {
+            throw new InvalidDecimalException("Invalid decimal number.");
+        }
+        System.out.println("Valid decimal number: " + value);
+    }
+}
