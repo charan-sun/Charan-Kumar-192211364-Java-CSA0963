@@ -1,0 +1,17 @@
+import java.util.Scanner;
+
+public class SquareRootFinder {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a perfect square number: ");
+        int number = scanner.nextInt();
+        
+        int sqrt = (int) Math.sqrt(number);
+        if (sqrt * sqrt == number) {
+            System.out.println("Square roots: " + sqrt + " and " + (-sqrt));
+        } else {
+            System.out.println("The number is not a perfect square.");
+        }
+        scanner.close();
+    }
+}
