@@ -1,0 +1,53 @@
+interface Tree {
+    void fruits(int param1, int param2);
+    void leaves(int param1, int param2, int param3);
+    void flowers(int param1, int param2, int param3, int param4);
+}
+
+class Branch1 implements Tree {
+    @Override
+    public void fruits(int param1, int param2) {
+        System.out.println("Branch1: Fruits method with parameters " + param1 + " and " + param2);
+    }
+
+    @Override
+    public void leaves(int param1, int param2, int param3) {
+        System.out.println("Branch1: Leaves method with parameters " + param1 + ", " + param2 + ", and " + param3);
+    }
+
+    @Override
+    public void flowers(int param1, int param2, int param3, int param4) {
+        System.out.println("Branch1: Flowers method with parameters " + param1 + ", " + param2 + ", " + param3 + ", and " + param4);
+    }
+}
+
+class Branch2 implements Tree {
+    @Override
+    public void fruits(int param1, int param2) {
+        System.out.println("Branch2: Fruits method with parameters " + param1 + " and " + param2);
+    }
+
+    @Override
+    public void leaves(int param1, int param2, int param3) {
+        System.out.println("Branch2: Leaves method with parameters " + param1 + ", " + param2 + ", and " + param3);
+    }
+
+    @Override
+    public void flowers(int param1, int param2, int param3, int param4) {
+        System.out.println("Branch2: Flowers method with parameters " + param1 + ", " + param2 + ", " + param3 + ", and " + param4);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Branch1 branch1 = new Branch1();
+        branch1.fruits(1, 2);
+        branch1.leaves(3, 4, 5);
+        branch1.flowers(6, 7, 8, 9);
+
+        Branch2 branch2 = new Branch2();
+        branch2.fruits(10, 11);
+        branch2.leaves(12, 13, 14);
+        branch2.flowers(15, 16, 17, 18);
+    }
+}
