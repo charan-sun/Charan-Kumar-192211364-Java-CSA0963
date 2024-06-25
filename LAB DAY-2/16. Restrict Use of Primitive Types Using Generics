@@ -1,0 +1,28 @@
+// Restrict use of primitive types using generics
+class MyWrapper<T> {
+    private T data;
+
+    MyWrapper(T data) {
+        this.data = data;
+    }
+
+    public T getData() {
+        return data;
+    }
+
+    public void setData(T data) {
+        this.data = data;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        // Using wrapper class Integer instead of int
+        MyWrapper<Integer> intWrapper = new MyWrapper<>(10);
+        System.out.println("Integer value: " + intWrapper.getData());
+
+        // Using wrapper class Double instead of double
+        MyWrapper<Double> doubleWrapper = new MyWrapper<>(3.14);
+        System.out.println("Double value: " + doubleWrapper.getData());
+    }
+}
