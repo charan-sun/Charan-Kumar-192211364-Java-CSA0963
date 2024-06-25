@@ -1,0 +1,29 @@
+public class PrimeNumbers {
+    public static void main(String[] args) {
+        int n = 5; // Example: Find 5 prime numbers after the 5th prime number
+        int count = 0;
+        int number = 2; // Starting from the first prime number
+
+        while (count < n) {
+            if (isPrime(number)) {
+                count++;
+                if (count > 5) { // Print only prime numbers after the 5th prime number
+                    System.out.println(number);
+                }
+            }
+            number++;
+        }
+    }
+
+    public static boolean isPrime(int num) {
+        if (num <= 1) {
+            return false;
+        }
+        for (int i = 2; i <= Math.sqrt(num); i++) {
+            if (num % i == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+}
