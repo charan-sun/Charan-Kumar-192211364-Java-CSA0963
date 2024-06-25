@@ -1,0 +1,29 @@
+class ThisDemo {
+    int a, b;
+
+    ThisDemo(int a, int b) {
+        this.a = a;
+        this.b = b;
+    }
+
+    void display() {
+        System.out.println("a = " + this.a + ", b = " + this.b);
+    }
+
+    ThisDemo returnThis() {
+        return this;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        ThisDemo obj1 = new ThisDemo(10, 20);
+        obj1.display();
+
+        ThisDemo obj2 = new ThisDemo(30, 40);
+        obj2.display();
+
+        ThisDemo obj3 = obj2.returnThis();
+        obj3.display();
+    }
+}
