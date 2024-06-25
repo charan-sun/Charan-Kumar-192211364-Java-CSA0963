@@ -1,0 +1,29 @@
+class StaticDemo {
+    static int staticVariable = 100;
+
+    static {
+        System.out.println("Inside static block");
+        System.out.println("Static variable: " + staticVariable);
+    }
+
+    static void staticMethod() {
+        System.out.println("Inside static method");
+    }
+
+    static class StaticNested {
+        void nestedMethod() {
+            System.out.println("Inside static nested class method");
+        }
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("Accessing static variable: " + StaticDemo.staticVariable);
+        StaticDemo.staticMethod();
+
+        // Accessing static nested class
+        StaticDemo.StaticNested nestedObj = new StaticDemo.StaticNested();
+        nestedObj.nestedMethod();
+    }
+}
