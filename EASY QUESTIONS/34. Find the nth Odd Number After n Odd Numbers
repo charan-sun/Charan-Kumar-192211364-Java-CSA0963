@@ -1,0 +1,15 @@
+import java.util.Scanner;
+
+public class NthOddNumber {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the value of n: ");
+        int n = scanner.nextInt();
+        
+        int nthOdd = 2 * n - 1;
+        int result = nthOdd + 2 * n;
+        
+        System.out.println("The nth odd number after n odd numbers: " + result);
+        scanner.close();
+    }
+}
