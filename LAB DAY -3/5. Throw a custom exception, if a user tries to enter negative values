@@ -1,0 +1,22 @@
+class NegativeValueException extends Exception {
+    public NegativeValueException(String message) {
+        super(message);
+    }
+}
+
+public class NegativeValueCheck {
+    public static void main(String[] args) {
+        try {
+            checkNegativeValue(-5);
+        } catch (NegativeValueException e) {
+            System.out.println("Exception: " + e.getMessage());
+        }
+    }
+
+    static void checkNegativeValue(int value) throws NegativeValueException {
+        if (value < 0) {
+            throw new NegativeValueException("Negative values are not allowed.");
+        }
+        System.out.println("Value is: " + value);
+    }
+}
