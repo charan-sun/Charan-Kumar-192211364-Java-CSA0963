@@ -1,0 +1,37 @@
+class EvenThread extends Thread {
+    private int number;
+    
+    public EvenThread(int number) {
+        this.number = number;
+    }
+
+    public void run() {
+        if (number % 2 == 0) {
+            System.out.println(number + " is even.");
+            try {
+                this.join();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        } else {
+            try {
+                if (number == 1) {
+                    Thread.sleep(10000);
+                } else if (number == 2) {
+                    Thread.sleep(5000);
+                }
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+}
+
+public class ThreadJoinSleep {
+    public static void main(String[] args) {
+        EvenThread t1 = new EvenThread(4);
+        EvenThread t2 = new EvenThread(7);
+        t1.start();
+        t2.start();
+    }
+}
