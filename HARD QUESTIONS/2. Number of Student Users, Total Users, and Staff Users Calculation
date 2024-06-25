@@ -1,0 +1,13 @@
+public class UsersCalculator {
+    public static void main(String[] args) {
+        int totalUsers = 50; // Total number of users
+        int staffUsers = 20; // Number of staff users
+
+        // For every 3 staff users, there is 1 non-teaching staff user
+        int nonTeachingStaff = staffUsers / 3;
+
+        int studentUsers = totalUsers - staffUsers - nonTeachingStaff;
+
+        System.out.println("Number of Student Users: " + studentUsers);
+    }
+}
