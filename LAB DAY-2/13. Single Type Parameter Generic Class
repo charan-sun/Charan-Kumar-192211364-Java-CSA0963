@@ -1,0 +1,28 @@
+// Single type parameter generic class
+class MyGenericClass<T> {
+    private T data;
+
+    MyGenericClass(T data) {
+        this.data = data;
+    }
+
+    public T getData() {
+        return data;
+    }
+
+    public void setData(T data) {
+        this.data = data;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        // Using Integer type parameter
+        MyGenericClass<Integer> intObj = new MyGenericClass<>(10);
+        System.out.println("Integer value: " + intObj.getData());
+
+        // Using String type parameter
+        MyGenericClass<String> strObj = new MyGenericClass<>("Hello, Generics!");
+        System.out.println("String value: " + strObj.getData());
+    }
+}
