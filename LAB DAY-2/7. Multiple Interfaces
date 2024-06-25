@@ -1,0 +1,34 @@
+interface Sum {
+    void sum();
+}
+
+interface Avg {
+    void avg();
+}
+
+interface Percentage {
+    void percentage();
+}
+
+class ImplementInterfaces implements Sum, Avg, Percentage {
+    public void sum() {
+        System.out.println("Sum method");
+    }
+
+    public void avg() {
+        System.out.println("Avg method");
+    }
+
+    public void percentage() {
+        System.out.println("Percentage method");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        ImplementInterfaces obj = new ImplementInterfaces();
+        obj.sum();
+        obj.avg();
+        obj.percentage();
+    }
+}
