@@ -1,0 +1,16 @@
+public class SumOfNNumbers {
+    public static void main(String[] args) {
+        int[] numbers = {1, 2, 3, 4, 5};
+        int n = 6; // Size of array is 5, so accessing index 6 will throw exception
+
+        int sum = 0;
+        try {
+            for (int i = 0; i < n; i++) {
+                sum += numbers[i];
+            }
+            System.out.println("Sum of first " + n + " numbers: " + sum);
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("ArrayIndexOutOfBoundsException caught: Loop variable exceeds array size");
+        }
+    }
+}
