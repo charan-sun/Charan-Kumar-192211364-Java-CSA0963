@@ -1,0 +1,46 @@
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
+import java.text.ParseException;
+import java.util.Locale;
+import java.util.Scanner;
+
+public class NumberFormatExceptions {
+    public static void main(String[] args) {
+        try {
+            int num = Integer.parseInt("abc");
+        } catch (NumberFormatException e) {
+            System.out.println("Exception: Parsing a non-numeric string.");
+        }
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a number: ");
+        String userInput = scanner.next();
+
+        try {
+            int number = Integer.parseInt(userInput);
+            System.out.println("You entered: " + number);
+        } catch (NumberFormatException e) {
+            System.out.println("Exception: Reading user input without validation.");
+        }
+
+        DecimalFormat decimalFormat = new DecimalFormat("#.###");
+        String decimalString = "123.456a";
+
+        try {
+            Number number = decimalFormat.parse(decimalString);
+            System.out.println("Parsed number: " + number);
+        } catch (ParseException e) {
+            System.out.println("Exception: Formatting issues in 'Decimal Format'.");
+        }
+
+        String localizedNumber = "1.234,56";
+        NumberFormat numberFormat = NumberFormat.getInstance(Locale.GERMANY);
+
+        try {
+            Number num = numberFormat.parse(localizedNumber);
+            System.out.println("Parsed localized number: " + num);
+        } catch (ParseException e) {
+            System.out.println("Exception: Incorrectly using localized decimal separators.");
+        }
+    }
+}
