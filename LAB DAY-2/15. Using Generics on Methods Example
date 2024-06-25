@@ -1,0 +1,25 @@
+// Using generics on methods example
+class Util {
+    public <T> void printArray(T[] array) {
+        for (T element : array) {
+            System.out.print(element + " ");
+        }
+        System.out.println();
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Util util = new Util();
+
+        // Integer array
+        Integer[] intArray = {1, 2, 3, 4, 5};
+        System.out.print("Integer Array: ");
+        util.printArray(intArray);
+
+        // String array
+        String[] strArray = {"Java", "Python", "C++"};
+        System.out.print("String Array: ");
+        util.printArray(strArray);
+    }
+}
