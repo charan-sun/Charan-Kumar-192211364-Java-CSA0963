@@ -1,0 +1,52 @@
+class MyThread1 extends Thread {
+    public void run() {
+        try {
+            Thread.sleep(5000);
+            synchronized (this) {
+                wait(3000);
+            }
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+}
+
+class MyThread2 extends Thread {
+    public void run() {
+        try {
+            Thread.sleep(3000);
+            synchronized (this) {
+                wait(5000);
+            }
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+}
+
+public class ThreadWaitingSleeping {
+    public static void main(String[] args) throws InterruptedException {
+        MyThread1 t1 = new MyThread1();
+        MyThread2 t2 = new MyThread2();
+        long start1 = System.currentTimeMillis();
+        t1.start();
+        t1.join();
+        long end1 = System.currentTimeMillis();
+        
+        long start2 = System.currentTimeMillis();
+        t2.start();
+        t2.join();
+        long end2 = System.currentTimeMillis();
+        
+        long t1Time = end1 - start1;
+        long t2Time = end2 - start2;
+        
+        System.out.println("T1 total time: " + t1Time + "ms");
+        System.out.println("T2 total time: " + t2Time + "ms");
+        if (t1Time > t2Time) {
+            System.out.println("T1 has longer waiting and sleeping time");
+        } else {
+            System.out.println("T2 has longer waiting and sleeping time");
+        }
+    }
+}
