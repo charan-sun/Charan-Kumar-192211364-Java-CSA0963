@@ -1,0 +1,27 @@
+class Overload {
+    int sum(int a, int b) {
+        return a + b;
+    }
+
+    int sum(int a, int b, int c) {
+        return a + b + c;
+    }
+
+    double sum(double a, double b) {
+        return a + b;
+    }
+
+    int sum(int b, int a) {
+        return a + b;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Overload obj = new Overload();
+        System.out.println(obj.sum(5, 10));
+        System.out.println(obj.sum(5, 10, 15));
+        System.out.println(obj.sum(5.5, 10.5));
+        System.out.println(obj.sum(10, 5));
+    }
+}
